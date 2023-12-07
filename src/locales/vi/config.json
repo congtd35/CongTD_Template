@@ -1,0 +1,8 @@
+{
+  "title": "Cài đặt",
+  "animation": "Hiệu ứng",
+  "selectAnimation": {
+    "snow": "Tuyết rơi",
+    "disable": "Tắt hiệu ứng"
+  }
+}

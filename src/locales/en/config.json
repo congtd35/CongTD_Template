@@ -1,0 +1,8 @@
+{
+  "title": "Setting",
+  "animation": "Animation",
+  "selectAnimation": {
+    "snow": "Snow",
+    "disable": "Disable effects"
+  }
+}

@@ -1,0 +1,15 @@
+
+const TYPE_ACTION = {
+   BACKGROUND: {
+    CHANGE_BACKGROUND: 'CHANGE_BACKGROUND',
+   },
+   THEME: {
+    CHANGE_THEM: 'CHANGE_THEME'
+   },
+    ANIMATION: {
+        CHANGE_ANIMATION: 'CHANGE_ANIMATION'
+    }
+};
+
+
+export default TYPE_ACTION;
