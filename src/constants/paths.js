@@ -1,8 +1,7 @@
-
-
 const paths = {
-    home: '/',
-    login: '/login'
+  home: '/home',
+  login: '/login',
+  documentManagement: '/document-management',
 };
 
 export default paths;

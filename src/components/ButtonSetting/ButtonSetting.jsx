@@ -1,16 +1,17 @@
-import styled from "styled-components";
-import {SettingFilled} from "@ant-design/icons";
-import style from "./ButtonSetting.css";
+import React from 'react';
+import styled from 'styled-components';
+import { SettingFilled } from '@ant-design/icons';
+import PropTypes from 'prop-types';
 
 const IconSetting = styled(SettingFilled)`
   font-size: 32px;
-  color: #D9D9DE;
+  color: #d9d9de;
   cursor: pointer;
+
   :hover {
     color: black;
   }
 `;
-
 const Button = styled.div`
   background: #00000080;
   position: absolute;
@@ -25,11 +26,12 @@ const Button = styled.div`
   align-items: center;
   justify-content: flex-end;
 `;
-
-const ButtonSetting = ({openSetting}) => {
-    return <Button>
-        <IconSetting onClick={openSetting} className="circle" />
-    </Button>
+const ButtonSetting = ({ openSetting }) => (
+  <Button>
+    <IconSetting onClick={openSetting} className="circle" />
+  </Button>
+);
+ButtonSetting.propTypes = {
+  openSetting: PropTypes.func,
 };
-
 export default ButtonSetting;
