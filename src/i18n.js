@@ -4,35 +4,35 @@ import Backend from 'i18next-http-backend';
 import detector from 'i18next-browser-languagedetector';
 import vi from './locales/vi/index';
 import en from './locales/en/index';
+
 const Languages = ['en', 'vi'];
 export let DEFAULT_LOCALE = '';
 const languageLocal = localStorage.getItem('lang');
-if(process.env.NODE_ENV === 'production'){
-    DEFAULT_LOCALE = languageLocal ? languageLocal : window.SystemConfig.LANG;
-}
-else{
-    DEFAULT_LOCALE = languageLocal ? languageLocal : 'vi';
+if (process.env.NODE_ENV === 'production') {
+  DEFAULT_LOCALE = languageLocal ? languageLocal : (window.SystemConfig ? window.SystemConfig.LANG : 'vi');
+} else {
+  DEFAULT_LOCALE = languageLocal ? languageLocal : 'vi';
 }
 const resources = {
-    en: {
-        translation: en,
-    },
-    vi: {
-        translation: vi,
-    },
+  en: {
+    translation: en,
+  },
+  vi: {
+    translation: vi,
+  },
 };
 
 i18n
-    .use(detector)
-    .use(Backend)
-    .use(initReactI18next)
-    .init({
-        resources,
-        fallbackLng: ['vi', 'en'],
-        lng: DEFAULT_LOCALE,
-        interpolation: { escapeValue: false },
-        debug: true,
-        whitelist: Languages,
-    });
+  .use(detector)
+  .use(Backend)
+  .use(initReactI18next)
+  .init({
+    resources,
+    fallbackLng: ['vi', 'en'],
+    lng: DEFAULT_LOCALE,
+    interpolation: { escapeValue: false },
+    debug: true,
+    whitelist: Languages,
+  });
 
 export default i18n;
