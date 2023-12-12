@@ -30,6 +30,8 @@ import { useLocation } from 'react-router';
 import paths from '../constants/paths';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import MusicDrawer from '../components/MusicDrawer/MusicDrawer.jsx';
+import ButtonMusic from '../components/ButtonMusic/ButtonMusic.jsx';
 
 const MyLayout = ({ children }) => {
   const { t } = useTranslation();
@@ -51,6 +53,7 @@ const MyLayout = ({ children }) => {
   ];
   const [collapsed, setCollapsed] = useState(true);
   const [isOpenSetting, setIsOpenSetting] = useState(false);
+  const [isOpenMusic, setIsOpenMusic] = useState(false);
   const background = useSelector(selectBackground);
   const theme = useSelector(selectTheme);
   const location = useLocation();
@@ -62,7 +65,9 @@ const MyLayout = ({ children }) => {
   return <LayoutContainer>
     <AnimationBox />
     <ButtonSetting openSetting={() => setIsOpenSetting(true)} />
+    <ButtonMusic openSetting={() => setIsOpenMusic(true)} />
     <ConfigDrawer isOpen={isOpenSetting} onClose={() => setIsOpenSetting(false)} />
+    <MusicDrawer isOpen={isOpenMusic} onClose={() => setIsOpenMusic(false)} />
     <LayoutStyled backgroundimage={background} className={styles.layout}>
       <MyContent className={styles.content}>
         <LayoutInside backgroundcolor={theme.background}>
